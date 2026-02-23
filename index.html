@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud Integral de Información y Recursos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Solicitud Integral de Información y Recursos</h1>
+            <p class="subtitle">Formulario para la recolección de información necesaria para el desarrollo de proyectos digitales</p>
+        </header>
+
+        <form id="mainForm" class="form-container">
+            <!-- Sección 1: Información General -->
+            <section class="form-section">
+                <h2 class="section-title">1. Información General</h2>
+                
+                <div class="form-group">
+                    <label class="form-label" for="companyHistory">Historia de la empresa</label>
+                    <textarea class="form-textarea" id="companyHistory" name="companyHistory" rows="4" required placeholder="Cuente la historia de su empresa..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="productDescription">Descripción del producto o servicio</label>
+                    <textarea class="form-textarea" id="productDescription" name="productDescription" rows="4" required placeholder="Describa claramente su producto o servicio..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="targetAudience">Público objetivo general</label>
+                    <textarea class="form-textarea" id="targetAudience" name="targetAudience" rows="4" required placeholder="Describa su público objetivo..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="priceRange">Precio o rango de precios</label>
+                    <input type="text" class="form-input" id="priceRange" name="priceRange" required placeholder="Ej: $100 - $500">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="brandManual">Manual de marca (si existe)</label>
+                    <input type="file" class="form-file" id="brandManual" name="brandManual" accept=".pdf,.doc,.docx,.zip">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="logo">Logo en alta resolución</label>
+                    <input type="file" class="form-file" id="logo" name="logo" accept=".png,.jpg,.jpeg,.svg">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="colorPalette">Paleta de colores</label>
+                    <input type="text" class="form-input" id="colorPalette" name="colorPalette" placeholder="Ej: #0066CC (azul), #FFFFFF (blanco), #FF6B35 (naranja)">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="typography">Tipografías</label>
+                    <input type="text" class="form-input" id="typography" name="typography" placeholder="Ej: Arial (principal), Times New Roman (secundaria)">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="photos">Fotografías</label>
+                    <input type="file" class="form-file" id="photos" name="photos" accept=".png,.jpg,.jpeg" multiple>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="videos">Videos</label>
+                    <input type="file" class="form-file" id="videos" name="videos" accept=".mp4,.mov,.avi,.mkv" multiple>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="testimonials">Testimonios</label>
+                    <textarea class="form-textarea" id="testimonials" name="testimonials" rows="4" placeholder="Ingrese los testimonios de clientes..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="additionalGraphics">Material gráfico adicional</label>
+                    <input type="file" class="form-file" id="additionalGraphics" name="additionalGraphics" accept=".png,.jpg,.jpeg,.pdf,.zip" multiple>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="socialMediaAccess">Accesos a redes sociales</label>
+                    <textarea class="form-textarea" id="socialMediaAccess" name="socialMediaAccess" rows="4" placeholder="Ingrese los accesos a sus redes sociales..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="businessManagerAccess">Acceso a Business Manager</label>
+                    <textarea class="form-textarea" id="businessManagerAccess" name="businessManagerAccess" rows="4" placeholder="Ingrese los accesos a Business Manager..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="hotmartAccess">Acceso a Hotmart (si aplica)</label>
+                    <textarea class="form-textarea" id="hotmartAccess" name="hotmartAccess" rows="4" placeholder="Ingrese los accesos a Hotmart..."></textarea>
+                </div>
+            </section>
+
+            <!-- Sección 2: Creación de Contenido -->
+            <section class="form-section">
+                <h2 class="section-title">2. Creación de Contenido</h2>
+                
+                <div class="form-group">
+                    <label class="form-label" for="educationalMaterial">Material educativo (PDFs, documentos, recursos base)</label>
+                    <input type="file" class="form-file" id="educationalMaterial" name="educationalMaterial" accept=".pdf,.doc,.docx,.ppt,.pptx" multiple>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="productPhotos">Fotografías del producto o servicio</label>
+                    <input type="file" class="form-file" id="productPhotos" name="productPhotos" accept=".png,.jpg,.jpeg" multiple>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="availableVideos">Videos disponibles</label>
+                    <input type="file" class="form-file" id="availableVideos" name="availableVideos" accept=".mp4,.mov,.avi,.mkv" multiple>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="successStories">Casos de éxito</label>
+                    <textarea class="form-textarea" id="successStories" name="successStories" rows="4" placeholder="Ingrese los casos de éxito..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="relevantInfo">Información relevante que consideren importante comunicar</label>
+                    <textarea class="form-textarea" id="relevantInfo" name="relevantInfo" rows="4" placeholder="Ingrese información adicional importante..."></textarea>
+                </div>
+            </section>
+
+            <!-- Sección 3: Anuncios -->
+            <section class="form-section">
+                <h2 class="section-title">3. Anuncios (Meta Ads / Google Ads / LinkedIn si aplica)</h2>
+                
+                <div class="form-group">
+                    <label class="form-label" for="adsSuccessStories">Casos de éxito</label>
+                    <textarea class="form-textarea" id="adsSuccessStories" name="adsSuccessStories" rows="4" placeholder="Ingrese casos de éxito para anuncios..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="adsBusinessManager">Acceso a Business Manager</label>
+                    <textarea class="form-textarea" id="adsBusinessManager" name="adsBusinessManager" rows="4" placeholder="Ingrese accesos a Business Manager para anuncios..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="activeAdAccounts">Acceso a cuentas publicitarias activas</label>
+                    <textarea class="form-textarea" id="activeAdAccounts" name="activeAdAccounts" rows="4" placeholder="Ingrese accesos a cuentas publicitarias activas..."></textarea>
+                </div>
+            </section>
+
+            <!-- Sección 4: Landing Page -->
+            <section class="form-section">
+                <h2 class="section-title">4. Landing Page</h2>
+                
+                <div class="form-group">
+                    <label class="form-label" for="domainName">Nombre del dominio</label>
+                    <input type="text" class="form-input" id="domainName" name="domainName" placeholder="Ej: www.miempresa.com">
+                </div>
+            </section>
+
+            <!-- Botones de envío -->
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
+            </div>
+        </form>
+
+        <!-- Mensaje de éxito -->
+        <div id="successMessage" class="success-message hidden">
+            <h3>¡Solicitud enviada con éxito!</h3>
+            <p>Gracias por completar el formulario. Nos contactaremos con usted pronto.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
