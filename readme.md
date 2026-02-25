@@ -15,9 +15,9 @@ FORMULARIO (Cliente debe enviar)
     Tipografías.
 
 - Recursos visuales disponibles
-    Fotografías.
-    Videos.
-    Testimonios.
+    Fotografías del producto, servicio, o la parte humana de la empresa.
+    Videos disponibles.
+    Testimonios de exito.
     Material gráfico adicional.
 
 - Accesos
@@ -25,24 +25,7 @@ FORMULARIO (Cliente debe enviar)
     Acceso a Business Manager.
     Acceso a Hotmart (si aplica).
 
-2. CREACIÓN DE CONTENIDO
-FORMULARIO (Cliente debe enviar)
-
-- Material educativo (PDFs, documentos, recursos base).
-- Fotografías del producto o servicio.
-- Videos disponibles.
-- Testimonios.
-- Casos de éxito.
-- Información relevante que consideren importante comunicar.
-
-3. ANUNCIOS (Meta Ads / Google Ads / LinkedIn si aplica)
-FORMULARIO (Cliente debe enviar)
-
-- Casos de éxito.
-- Acceso a Business Manager.
-- Acceso a cuentas publicitarias activas.
-
-4. LANDING PAGE
-FORMULARIO (Cliente debe enviar)
-
-- Nombre del dominio.
+- Adicionales
+    Material educativo (PDFs, documentos, recursos base).
+    Información relevante que consideren importante comunicar.
+    Nombre del dominio.
