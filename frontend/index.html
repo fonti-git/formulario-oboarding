@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud Integral de Información y Recursos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="error-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="main-title">Solicitud Integral</h1>
+                <p class="subtitle">Formulario para proyectos digitales</p>
+            </div>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-info">
+                <span class="current-step">Paso 1</span>
+                <span class="total-steps">de 5</span>
+            </div>
+        </div>
+
+        <form id="mainForm" class="form-container">
+            <!-- Slide 1: Información de la Empresa -->
+            <div class="slide active" data-step="1">
+                <div class="slide-content">
+                    <div class="step-indicator">Paso 1</div>
+                    <h2 class="slide-title">Información de la Empresa</h2>
+                    <p class="slide-description">Comencemos con los detalles básicos de su empresa</p>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="companyName">0. Nombre de la empresa</label>
+                        <input type="text" class="form-input" id="companyName" name="companyName" required placeholder="Ej: Mi Empresa S.A.">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="companyHistory">1. Historia de la empresa</label>
+                        <textarea class="form-textarea" id="companyHistory" name="companyHistory" rows="4" required placeholder="Cuente la historia de su empresa..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="productDescription">2. Descripción del producto o servicio</label>
+                        <textarea class="form-textarea" id="productDescription" name="productDescription" rows="4" required placeholder="Describa claramente su producto o servicio..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="targetAudience">3. Público objetivo general</label>
+                        <textarea class="form-textarea" id="targetAudience" name="targetAudience" rows="4" required placeholder="Describa su público objetivo..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="priceRange">4. Precio o rango de precios</label>
+                        <input type="text" class="form-input" id="priceRange" name="priceRange" required placeholder="Ej: $100 - $500">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Identidad Visual -->
+            <div class="slide" data-step="2">
+                <div class="slide-content">
+                    <div class="step-indicator">Paso 2</div>
+                    <h2 class="slide-title">Identidad Visual</h2>
+                    <p class="slide-description">Compártanos los elementos visuales de su marca</p>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="brandManual">5. Manual de marca (si existe)</label>
+                        <div class="file-input-container">
+                            <input type="file" class="form-file" id="brandManual" name="brandManual" accept=".pdf,.doc,.docx,.zip" multiple>
+                            <div id="brandManualFiles" class="selected-files"></div>
+                            <div class="file-input-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="brandManualSource" value="file" checked>
+                                    <span class="radio-custom"></span>
+                                    Subir archivos
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="brandManualSource" value="drive">
+                                    <span class="radio-custom"></span>
+                                    Link de Google Drive
+                                </label>
+                            </div>
+                            <input type="text" class="form-input hidden" id="brandManualDrive" name="brandManualDrive" placeholder="https://drive.google.com/...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="logo">6. Logo en alta resolución</label>
+                        <div class="file-input-container">
+                            <input type="file" class="form-file" id="logo" name="logo" accept=".png,.jpg,.jpeg,.svg" multiple>
+                            <div id="logoFiles" class="selected-files"></div>
+                            <div class="file-input-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="logoSource" value="file" checked>
+                                    <span class="radio-custom"></span>
+                                    Subir archivos
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="logoSource" value="drive">
+                                    <span class="radio-custom"></span>
+                                    Link de Google Drive
+                                </label>
+                            </div>
+                            <input type="text" class="form-input hidden" id="logoDrive" name="logoDrive" placeholder="https://drive.google.com/...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="colorPalette">7. Paleta de colores</label>
+                        <input type="text" class="form-input" id="colorPalette" name="colorPalette" placeholder="Ej: #0066CC (azul), #FFFFFF (blanco), #FF6B35 (naranja)">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="typography">8. Tipografías</label>
+                        <input type="text" class="form-input" id="typography" name="typography" placeholder="Ej: Arial (principal), Times New Roman (secundaria)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Recursos Visuales Disponibles -->
+            <div class="slide" data-step="3">
+                <div class="slide-content">
+                    <div class="step-indicator">Paso 3</div>
+                    <h2 class="slide-title">Recursos Visuales Disponibles</h2>
+                    <p class="slide-description">Suba los materiales visuales y de contenido</p>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="photos">9. Fotografías del producto, servicio o equipo</label>
+                        <div class="file-input-container">
+                            <input type="file" class="form-file" id="photos" name="photos" accept=".png,.jpg,.jpeg" multiple>
+                            <div id="photosFiles" class="selected-files"></div>
+                            <div class="file-input-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="photosSource" value="file" checked>
+                                    <span class="radio-custom"></span>
+                                    Subir archivos
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="photosSource" value="drive">
+                                    <span class="radio-custom"></span>
+                                    Link de Google Drive
+                                </label>
+                            </div>
+                            <input type="text" class="form-input hidden" id="photosDrive" name="photosDrive" placeholder="https://drive.google.com/...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="videos">10. Videos disponibles</label>
+                        <div class="file-input-container">
+                            <input type="file" class="form-file" id="videos" name="videos" accept=".mp4,.mov,.avi,.mkv" multiple>
+                            <div id="videosFiles" class="selected-files"></div>
+                            <div class="file-input-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="videosSource" value="file" checked>
+                                    <span class="radio-custom"></span>
+                                    Subir archivos
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="videosSource" value="drive">
+                                    <span class="radio-custom"></span>
+                                    Link de Google Drive
+                                </label>
+                            </div>
+                            <input type="text" class="form-input hidden" id="videosDrive" name="videosDrive" placeholder="https://drive.google.com/...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">11. Testimonios de éxito</label>
+                        <div class="file-input-container">
+                            <div class="file-input-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="testimonialsSource" value="text" checked>
+                                    <span class="radio-custom"></span>
+                                    Escribir testimonio
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="testimonialsSource" value="file">
+                                    <span class="radio-custom"></span>
+                                    Subir archivo
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="testimonialsSource" value="google">
+                                    <span class="radio-custom"></span>
+                                    Link de reseñas de Google
+                                </label>
+                            </div>
+                            
+                            <!-- Opción 1: Escribir testimonio -->
+                            <textarea class="form-textarea" id="testimonials" name="testimonials" rows="4" placeholder="Ingrese los testimonios de clientes..."></textarea>
+                            
+                            <!-- Opción 2: Subir archivo -->
+                            <input type="file" class="form-file hidden" id="testimonialsFile" name="testimonialsFile" accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg" multiple>
+                            <div id="testimonialsFiles" class="selected-files hidden"></div>
+                            
+                            <!-- Opción 3: Link de reseñas de Google -->
+                            <input type="text" class="form-input hidden" id="testimonialsGoogleLink" name="testimonialsGoogleLink" placeholder="https://www.google.com/maps/reviews/...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="additionalGraphics">12. Material gráfico adicional</label>
+                        <div class="file-input-container">
+                            <input type="file" class="form-file" id="additionalGraphics" name="additionalGraphics" accept=".png,.jpg,.jpeg,.pdf,.zip" multiple>
+                            <div id="additionalGraphicsFiles" class="selected-files"></div>
+                            <div class="file-input-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="additionalGraphicsSource" value="file" checked>
+                                    <span class="radio-custom"></span>
+                                    Subir archivos
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="additionalGraphicsSource" value="drive">
+                                    <span class="radio-custom"></span>
+                                    Link de Google Drive
+                                </label>
+                            </div>
+                            <input type="text" class="form-input hidden" id="additionalGraphicsDrive" name="additionalGraphicsDrive" placeholder="https://drive.google.com/...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Accesos -->
+            <div class="slide" data-step="4">
+                <div class="slide-content">
+                    <div class="step-indicator">Paso 4</div>
+                    <h2 class="slide-title">Accesos</h2>
+                    <p class="slide-description">Detalles técnicos y accesos a plataformas</p>
+                    
+                    <!-- Accesos a Redes Sociales -->
+                    <div class="form-section-group">
+                        <h3 class="section-subtitle">Accesos a Redes Sociales</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="socialMediaMethod">13. ¿Cómo prefieres compartir los accesos a redes sociales?</label>
+                            <select class="form-input" id="socialMediaMethod" name="socialMediaMethod" required>
+                                <option value="">Seleccione una opción</option>
+                                <option value="call">Prefiero que me asesoren en una llamada</option>
+                                <option value="form">Prefiero enviar la información en el formulario</option>
+                            </select>
+                        </div>
+
+                        <!-- Condicional: Formulario de Redes Sociales -->
+                        <div id="socialMediaFormFields" class="conditional-fields hidden">
+                            <div class="form-group">
+                                <label class="form-label">14. ¿Qué redes sociales quieres compartir?</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="socialMediaInstagram" name="socialMediaInstagram" value="instagram">
+                                        <span class="checkbox-custom"></span>
+                                        Instagram
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="socialMediaMeta" name="socialMediaMeta" value="meta">
+                                        <span class="checkbox-custom"></span>
+                                        Meta (Facebook)
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="socialMediaTikTok" name="socialMediaTikTok" value="tiktok">
+                                        <span class="checkbox-custom"></span>
+                                        TikTok
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Credenciales por Red Social -->
+                            <div id="socialMediaCredentials" class="conditional-fields hidden">
+                                <!-- Instagram -->
+                                <div id="instagramCredentials" class="social-credentials hidden">
+                                    <h4 class="credential-title">Instagram</h4>
+                                    <div class="form-group">
+                                        <label class="form-label" for="instagramEmail">Correo electrónico</label>
+                                        <input type="email" class="form-input" id="instagramEmail" name="instagramEmail" placeholder="ejemplo@email.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="instagramPassword">Contraseña</label>
+                                        <input type="password" class="form-input" id="instagramPassword" name="instagramPassword" placeholder="••••••••">
+                                    </div>
+                                </div>
+
+                                <!-- Meta -->
+                                <div id="metaCredentials" class="social-credentials hidden">
+                                    <h4 class="credential-title">Meta (Facebook)</h4>
+                                    <div class="form-group">
+                                        <label class="form-label" for="metaEmail">Correo electrónico</label>
+                                        <input type="email" class="form-input" id="metaEmail" name="metaEmail" placeholder="ejemplo@email.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="metaPassword">Contraseña</label>
+                                        <input type="password" class="form-input" id="metaPassword" name="metaPassword" placeholder="••••••••">
+                                    </div>
+                                </div>
+
+                                <!-- TikTok -->
+                                <div id="tiktokCredentials" class="social-credentials hidden">
+                                    <h4 class="credential-title">TikTok</h4>
+                                    <div class="form-group">
+                                        <label class="form-label" for="tiktokEmail">Correo electrónico</label>
+                                        <input type="email" class="form-input" id="tiktokEmail" name="tiktokEmail" placeholder="ejemplo@email.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="tiktokPassword">Contraseña</label>
+                                        <input type="password" class="form-input" id="tiktokPassword" name="tiktokPassword" placeholder="••••••••">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acceso a Business Manager -->
+                    <div class="form-section-group">
+                        <h3 class="section-subtitle">Acceso a Business Manager</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="businessManagerMethod">14. ¿Cómo prefieres compartir los accesos?</label>
+                            <select class="form-input" id="businessManagerMethod" name="businessManagerMethod">
+                                <option value="">Seleccione una opción</option>
+                                <option value="call">Prefiero que me asesoren en una llamada</option>
+                                <option value="form">Prefiero enviar la información en el formulario</option>
+                            </select>
+                        </div>
+
+                        <!-- Condicional: Formulario de Business Manager -->
+                        <div id="businessManagerFormFields" class="conditional-fields hidden">
+                            <div class="form-group">
+                                <label class="form-label" for="businessManagerEmail">Correo electrónico</label>
+                                <input type="email" class="form-input" id="businessManagerEmail" name="businessManagerEmail" placeholder="ejemplo@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="businessManagerPassword">Contraseña</label>
+                                <input type="password" class="form-input" id="businessManagerPassword" name="businessManagerPassword" placeholder="••••••••">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acceso a Hotmart -->
+                    <div class="form-section-group">
+                        <h3 class="section-subtitle">Acceso a Hotmart (si aplica)</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="hotmartMethod">15. ¿Cómo prefieres compartir los accesos?</label>
+                            <select class="form-input" id="hotmartMethod" name="hotmartMethod">
+                                <option value="">Seleccione una opción</option>
+                                <option value="call">Prefiero que me asesoren en una llamada</option>
+                                <option value="form">Prefiero enviar la información en el formulario</option>
+                            </select>
+                        </div>
+
+                        <!-- Condicional: Formulario de Hotmart -->
+                        <div id="hotmartFormFields" class="conditional-fields hidden">
+                            <div class="form-group">
+                                <label class="form-label" for="hotmartEmail">Correo electrónico</label>
+                                <input type="email" class="form-input" id="hotmartEmail" name="hotmartEmail" placeholder="ejemplo@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="hotmartPassword">Contraseña</label>
+                                <input type="password" class="form-input" id="hotmartPassword" name="hotmartPassword" placeholder="••••••••">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Adicionales -->
+            <div class="slide" data-step="5">
+                <div class="slide-content">
+                    <div class="step-indicator">Paso 5</div>
+                    <h2 class="slide-title">Adicionales</h2>
+                    <p class="slide-description">Información adicional y material educativo</p>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="educationalMaterial">16. Material educativo (PDFs, documentos, recursos base)</label>
+                        <div class="file-input-container">
+                            <input type="file" class="form-file" id="educationalMaterial" name="educationalMaterial" accept=".pdf,.doc,.docx,.ppt,.pptx" multiple>
+                            <div id="educationalMaterialFiles" class="selected-files"></div>
+                            <div class="file-input-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="educationalMaterialSource" value="file" checked>
+                                    <span class="radio-custom"></span>
+                                    Subir archivos
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="educationalMaterialSource" value="drive">
+                                    <span class="radio-custom"></span>
+                                    Link de Google Drive
+                                </label>
+                            </div>
+                            <input type="text" class="form-input hidden" id="educationalMaterialDrive" name="educationalMaterialDrive" placeholder="https://drive.google.com/...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="relevantInfo">17. Información relevante que consideren importante comunicar</label>
+                        <textarea class="form-textarea" id="relevantInfo" name="relevantInfo" rows="4" placeholder="Ingrese información adicional importante..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="domainName">18. Nombre del dominio que tiene o desea</label>
+                        <input type="text" class="form-input" id="domainName" name="domainName" placeholder="Ej: www.miempresa.com">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="navigation-container">
+                <button type="button" class="nav-btn nav-btn-prev" id="prevBtn" disabled>
+                    <span class="btn-icon">←</span>
+                    <span class="btn-text">Anterior</span>
+                </button>
+                <button type="button" class="nav-btn nav-btn-next" id="nextBtn">
+                    <span class="btn-text">Siguiente</span>
+                    <span class="btn-icon">→</span>
+                </button>
+                <button type="submit" class="nav-btn nav-btn-submit" id="submitBtn">
+                    <span class="btn-text">Enviar Solicitud</span>
+                    <span class="btn-icon">✓</span>
+                </button>
+            </div>
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message hidden">
+            <div class="success-icon">✓</div>
+            <h3>¡Solicitud enviada con éxito!</h3>
+            <p>Gracias por completar el formulario. Nos contactaremos con usted pronto.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

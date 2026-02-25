@@ -1,0 +1,140 @@
+            <!-- Slide 4: Accesos -->
+            <div class="slide" data-step="4">
+                <div class="slide-content">
+                    <div class="step-indicator">Paso 4</div>
+                    <h2 class="slide-title">Accesos</h2>
+                    <p class="slide-description">Detalles técnicos y accesos a plataformas</p>
+                    
+                    <!-- Accesos a Redes Sociales -->
+                    <div class="form-section-group">
+                        <h3 class="section-subtitle">Accesos a Redes Sociales</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="socialMediaMethod">¿Cómo prefieres compartir los accesos a redes sociales?</label>
+                            <select class="form-input" id="socialMediaMethod" name="socialMediaMethod" required>
+                                <option value="">Seleccione una opción</option>
+                                <option value="call">Prefiero que me asesoren en una llamada</option>
+                                <option value="form">Prefiero enviar la información en el formulario</option>
+                            </select>
+                        </div>
+
+                        <!-- Condicional: Formulario de Redes Sociales -->
+                        <div id="socialMediaFormFields" class="conditional-fields hidden">
+                            <div class="form-group">
+                                <label class="form-label">¿Qué redes sociales quieres compartir?</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="socialMediaInstagram" name="socialMediaInstagram" value="instagram">
+                                        <span class="checkbox-custom"></span>
+                                        Instagram
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="socialMediaMeta" name="socialMediaMeta" value="meta">
+                                        <span class="checkbox-custom"></span>
+                                        Meta (Facebook)
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="socialMediaTikTok" name="socialMediaTikTok" value="tiktok">
+                                        <span class="checkbox-custom"></span>
+                                        TikTok
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Credenciales por Red Social -->
+                            <div id="socialMediaCredentials" class="conditional-fields hidden">
+                                <!-- Instagram -->
+                                <div id="instagramCredentials" class="social-credentials hidden">
+                                    <h4 class="credential-title">Instagram</h4>
+                                    <div class="form-group">
+                                        <label class="form-label" for="instagramEmail">Correo electrónico</label>
+                                        <input type="email" class="form-input" id="instagramEmail" name="instagramEmail" placeholder="ejemplo@email.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="instagramPassword">Contraseña</label>
+                                        <input type="password" class="form-input" id="instagramPassword" name="instagramPassword" placeholder="••••••••">
+                                    </div>
+                                </div>
+
+                                <!-- Meta -->
+                                <div id="metaCredentials" class="social-credentials hidden">
+                                    <h4 class="credential-title">Meta (Facebook)</h4>
+                                    <div class="form-group">
+                                        <label class="form-label" for="metaEmail">Correo electrónico</label>
+                                        <input type="email" class="form-input" id="metaEmail" name="metaEmail" placeholder="ejemplo@email.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="metaPassword">Contraseña</label>
+                                        <input type="password" class="form-input" id="metaPassword" name="metaPassword" placeholder="••••••••">
+                                    </div>
+                                </div>
+
+                                <!-- TikTok -->
+                                <div id="tiktokCredentials" class="social-credentials hidden">
+                                    <h4 class="credential-title">TikTok</h4>
+                                    <div class="form-group">
+                                        <label class="form-label" for="tiktokEmail">Correo electrónico</label>
+                                        <input type="email" class="form-input" id="tiktokEmail" name="tiktokEmail" placeholder="ejemplo@email.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="tiktokPassword">Contraseña</label>
+                                        <input type="password" class="form-input" id="tiktokPassword" name="tiktokPassword" placeholder="••••••••">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acceso a Business Manager -->
+                    <div class="form-section-group">
+                        <h3 class="section-subtitle">Acceso a Business Manager</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="businessManagerMethod">¿Cómo prefieres compartir los accesos?</label>
+                            <select class="form-input" id="businessManagerMethod" name="businessManagerMethod">
+                                <option value="">Seleccione una opción</option>
+                                <option value="call">Prefiero que me asesoren en una llamada</option>
+                                <option value="form">Prefiero enviar la información en el formulario</option>
+                            </select>
+                        </div>
+
+                        <!-- Condicional: Formulario de Business Manager -->
+                        <div id="businessManagerFormFields" class="conditional-fields hidden">
+                            <div class="form-group">
+                                <label class="form-label" for="businessManagerEmail">Correo electrónico</label>
+                                <input type="email" class="form-input" id="businessManagerEmail" name="businessManagerEmail" placeholder="ejemplo@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="businessManagerPassword">Contraseña</label>
+                                <input type="password" class="form-input" id="businessManagerPassword" name="businessManagerPassword" placeholder="••••••••">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acceso a Hotmart -->
+                    <div class="form-section-group">
+                        <h3 class="section-subtitle">Acceso a Hotmart (si aplica)</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="hotmartMethod">¿Cómo prefieres compartir los accesos?</label>
+                            <select class="form-input" id="hotmartMethod" name="hotmartMethod">
+                                <option value="">Seleccione una opción</option>
+                                <option value="call">Prefiero que me asesoren en una llamada</option>
+                                <option value="form">Prefiero enviar la información en el formulario</option>
+                            </select>
+                        </div>
+
+                        <!-- Condicional: Formulario de Hotmart -->
+                        <div id="hotmartFormFields" class="conditional-fields hidden">
+                            <div class="form-group">
+                                <label class="form-label" for="hotmartEmail">Correo electrónico</label>
+                                <input type="email" class="form-input" id="hotmartEmail" name="hotmartEmail" placeholder="ejemplo@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="hotmartPassword">Contraseña</label>
+                                <input type="password" class="form-input" id="hotmartPassword" name="hotmartPassword" placeholder="••••••••">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
