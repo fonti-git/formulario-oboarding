@@ -69,7 +69,20 @@ class GoogleDriveService {
       });
 
       console.log('✅ Company folder created:', companyName, 'ID:', companyFolder.data.id);
-      return companyFolder.data.id;
+
+      // Create "Formulario onboarding" subfolder
+      const onboardingFolder = await this.drive.files.create({
+        resource: {
+          name: 'Formulario onboarding',
+          mimeType: 'application/vnd.google-apps.folder',
+          parents: [companyFolder.data.id]
+        },
+        fields: 'id'
+      });
+
+      console.log('✅ Onboarding form folder created: Formulario onboarding, ID:', onboardingFolder.data.id);
+
+      return onboardingFolder.data.id;
     } catch (error) {
       console.error('❌ Error creating company folder:', error.message);
       throw error;
@@ -91,12 +104,37 @@ class GoogleDriveService {
       });
 
       if (response.data.files.length > 0) {
-        const folderId = response.data.files[0].id;
-        console.log('✅ Company folder exists:', companyName, 'ID:', folderId);
-        return folderId;
+        const companyFolderId = response.data.files[0].id;
+        console.log('✅ Company folder exists:', companyName, 'ID:', companyFolderId);
+
+        // Search for "Formulario onboarding" subfolder
+        const onboardingFolderQuery = `name = 'Formulario onboarding' and mimeType = 'application/vnd.google-apps.folder' and '${companyFolderId}' in parents and trashed = false`;
+        const onboardingResponse = await this.drive.files.list({
+          q: onboardingFolderQuery,
+          fields: 'files(id, name)'
+        });
+
+        if (onboardingResponse.data.files.length > 0) {
+          const onboardingFolderId = onboardingResponse.data.files[0].id;
+          console.log('✅ Onboarding form folder exists: Formulario onboarding, ID:', onboardingFolderId);
+          return onboardingFolderId;
+        } else {
+          // Create "Formulario onboarding" subfolder if not found
+          const onboardingFolder = await this.drive.files.create({
+            resource: {
+              name: 'Formulario onboarding',
+              mimeType: 'application/vnd.google-apps.folder',
+              parents: [companyFolderId]
+            },
+            fields: 'id'
+          });
+
+          console.log('✅ Onboarding form folder created: Formulario onboarding, ID:', onboardingFolder.data.id);
+          return onboardingFolder.data.id;
+        }
       }
 
-      // Create new folder if not found
+      // Create new folder structure if not found
       return await this.createCompanyFolder(companyName);
     } catch (error) {
       console.error('❌ Error finding or creating company folder:', error.message);
